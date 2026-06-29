@@ -378,16 +378,21 @@
     .status-card::after {
       content: "";
       position: absolute;
-      left: 12px;
+      left: 0;
       top: 0;
       z-index: 1;
-      width: 54px;
+      width: 48px;
       height: 2px;
       border-radius: 999px;
       opacity: 0;
       pointer-events: none;
-      background: linear-gradient(90deg, transparent, rgba(100, 244, 172, 0.45), #ffffff, rgba(100, 244, 172, 0.9), transparent);
-      box-shadow: 0 0 12px rgba(100, 244, 172, 0.72);
+      background: linear-gradient(90deg, transparent, rgba(100, 244, 172, 0.35), #ffffff, rgba(100, 244, 172, 0.92), transparent);
+      box-shadow: 0 0 14px rgba(100, 244, 172, 0.72);
+      offset-path: path("M 13 1 H 197 Q 209 1 209 13 V 69 Q 209 81 197 81 H 13 Q 1 81 1 69 V 13 Q 1 1 13 1");
+      offset-distance: 0%;
+      offset-rotate: auto;
+      transform: translate(-24px, -1px);
+      will-change: offset-distance;
     }
 
     .status-card.is-processing {
@@ -453,51 +458,8 @@
     }
 
     @keyframes statusBorderRun {
-      0% {
-        left: 12px;
-        top: 0;
-        transform: translate(0, 0) rotate(0deg);
-      }
-      24% {
-        left: calc(100% - 66px);
-        top: 0;
-        transform: translate(0, 0) rotate(0deg);
-      }
-      25% {
-        left: calc(100% - 28px);
-        top: 12px;
-        transform: translate(0, 0) rotate(90deg);
-      }
-      49% {
-        left: calc(100% - 28px);
-        top: calc(100% - 14px);
-        transform: translate(0, -54px) rotate(90deg);
-      }
-      50% {
-        left: calc(100% - 66px);
-        top: calc(100% - 2px);
-        transform: translate(0, 0) rotate(180deg);
-      }
-      74% {
-        left: 12px;
-        top: calc(100% - 2px);
-        transform: translate(0, 0) rotate(180deg);
-      }
-      75% {
-        left: -26px;
-        top: calc(100% - 14px);
-        transform: translate(0, -54px) rotate(270deg);
-      }
-      99% {
-        left: -26px;
-        top: 12px;
-        transform: translate(0, 0) rotate(270deg);
-      }
-      100% {
-        left: 12px;
-        top: 0;
-        transform: translate(0, 0) rotate(0deg);
-      }
+      from { offset-distance: 0%; }
+      to { offset-distance: 100%; }
     }
     .sync-layout {
       width: min(100%, 1380px);
