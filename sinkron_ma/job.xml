@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<job version="9.0">
+	<syncjob>
+		<fkcheck check="yes" />
+		<source>
+			<tunnelinfo type="http">
+				<url>http://192.168.0.1/sipp/SQLyogTunnel.php</url>
+				<timeout>30000</timeout>
+				<contenttype>text/xml</contenttype>
+				<encodedata>0</encodedata>
+			</tunnelinfo>
+			<host>localhost</host>
+			<user>root</user>
+			<pwd>123gunungsugih</pwd>
+			<port>3306</port>
+			<compressed>1</compressed>
+			<ssl>0</ssl>
+			<sslauth>0</sslauth>
+			<clientkey></clientkey>
+			<clientcert></clientcert>
+			<cacert></cacert>
+			<cipher></cipher>
+			<charset></charset>
+			<database>sipp</database>
+		</source>
+		<target>
+			<tunnelinfo type="http">
+				<url>http://cts-upload.mahkamahagung.go.id/SQLyogTunnel.php</url>
+				<timeout>30000</timeout>
+				<contenttype>text/xml</contenttype>
+				<encodedata>0</encodedata>
+			</tunnelinfo>
+			<host>localhost</host>
+			<user>user_663030</user>
+			<pwd>7i61tLdU</pwd>
+			<port>3306</port>
+			<compressed>1</compressed>
+			<ssl>0</ssl>
+			<sslauth>0</sslauth>
+			<clientkey></clientkey>
+			<clientcert></clientcert>
+			<cacert></cacert>
+			<cipher></cipher>
+			<charset></charset>
+			<database>cts2_pn_663030</database>
+		</target>
+			<tables all="no">
+				<table>
+					<name>agama</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>agenda_sidang</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>antrian</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>arsip</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>arsip_pinjam</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>biaya_perkara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>bukti_tilang</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>delegasi_file_keluar</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>delegasi_file_masuk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>delegasi_proses_keluar</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>delegasi_masuk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>delegasi_keluar</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>delegasi_proses_masuk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>dirput_antrian</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>dirput_dokumen</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>dirput_pengajuan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>dirput_perkara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_register</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_anak_orang_tua</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_jenis_kesepakatan_diversi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_korban_orang_tua</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_register_blm_12tahun</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_anak_blm_12tahun</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_pembimbing_kemasyarakatan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_penasihat_hukum</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_penuntut</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>diversi_penyidik</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_biaya</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_antrian_cabut</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_antrian_pendaftaran</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_banding</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_cabut</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_hakim</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_jadwal_sidang</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_jurusita</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_kuasa_hukum</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_panitera</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_pengacara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_pengacara_tmp</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_perkara_hakim</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_perkara_jurusita</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_perkara_panitera</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_pihak</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ecourt_putusan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>hakim_ma</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>hakim_pn</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>izin_penggeledahan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>izin_penyitaan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jabatan_hakim</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_dokumen</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_intervensi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jurusita</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>kurator</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>mediator</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>panitera_ma</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>panitera_pn</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>penahanan_terdakwa</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_court_calendar</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_dokumen_rapat</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_dokumen_rapat_pkpu</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_efiling_id</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penawaran_konsinyasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_bantahan_tagihan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_biaya_penyelesaian_pailit</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_biaya_tk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_efiling</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_eksekusi_tk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_eksekusi_detil_tk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_hakim_pengawas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_hasil_pemungutan_suara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_jadwal_pemeriksaan_pk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_jadwal_pemeriksaan_tambahan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_jadwal_musyawarah_diversi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_juncto</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_kumulasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_kurator</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_laporan_kurator</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_laporan_publisitas</name>
+					<columns all="yes" />
+			</table>			
+			<table>
+					<name>perkara_pasca_pailit</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak_pekerja_sosial_profesional</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak_perwakilan_masyarakat</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak_tersangka</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penetapan_hari_sidang</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penetapan_hakim_pengawas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penetapan_publisitas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pengakhiran_kepailitan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pengakhiran_kepailitan_dokumen</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pengakhiran_pkpu</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pengumuman_kepailitan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penjualan_harta_pailit</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penyidik</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan_pkpu_sementara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan_pkpu_tetap</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan_sela_uh</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_rapat_pasca_kepailitan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_rapat_pkpu</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_ref_akad_syariah</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_ref_bidang_ekonomi_syariah</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_tindakan_hakim_pengawas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_barang_bukti_perdata</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_keterangan_saksi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_data_template_sidang</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_data_template_penahanan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_keterangan_terdakwa</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pelaksanaan_relaas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pendapat_terdakwa</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_actio_pauliana</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_akta_cerai</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_barang_bukti</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_banding</name>
+					<columns all="no">
+						<column>perkara_id</column>
+						<column>jenis_banding</column>
+						<column>alur_perkara_id</column>
+						<column>nomor_perkara_pn</column>
+						<column>putusan_pn</column>
+						<column>pihak_pembanding</column>
+						<column>permohonan_banding</column>
+						<column>pemohon_banding</column>
+						<column>para_pihak</column>
+						<column>pemberitahuan_putusan_pn</column>
+						<column>pemberitahuan_permohonan_banding</column>
+						<column>penerimaan_memori_banding</column>
+						<column>penyerahan_memori_banding</column>
+						<column>penerimaan_kontra_banding</column>
+						<column>penyerahan_kontra_banding</column>
+						<column>pemberitahuan_inzage</column>
+						<column>pemberitahuan_inzage_pembanding</column>
+						<column>pemberitahuan_inzage_terbanding</column>
+						<column>pelaksanaan_inzage</column>
+						<column>pelaksanaan_inzage_pembanding</column>
+						<column>pelaksanaan_inzage_terbanding</column>
+						<column>pengiriman_berkas_banding</column>
+						<column>nomor_surat_pengiriman_berkas_banding</column>
+						<column>penerimaan_kembali_berkas_banding</column>
+						<column>pemberitahuan_putusan_banding</column>
+						<column>minutasi_banding</column>
+						<column>tanggal_cabut</column>
+					</columns>
+			</table>
+			<table>
+					<name>perkara_banding_detil</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_biaya</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_biaya_ht</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_data_pernikahan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_dismissal</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_diversi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_dokumen</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_eksekusi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_eksekusi_detil</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_eksekusi_detil_ht</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_eksekusi_ht</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_grasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_hakim_kasasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_hakim_pk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_hakim_pn</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_harta_pailit</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_ikrar_talak</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_izin_cerai</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_jadwal_mediasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_jadwal_sidang</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_jadwal_sidang_detil</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_jurusita</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_kasasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_kasasi_detil</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_keberatan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_keberatan_detil</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_kejaksaan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_lalulintas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_matra</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_mediasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_mediator</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_panggilan_dismissal</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_panitera_kasasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_panitera_pk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_panitera_pn</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penetapan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pengacara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penuntutan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penyegelan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_penyitaan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_persiapan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_persiapan_proses</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak1</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak2</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak3</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak4</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak5</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak_korban</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak_orang_tua</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak_pembimbing_masyarakat</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pihak_penyidik</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_pk_detil</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan_pemberitahuan_putusan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan_sela</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan_terdakwa</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan_terdakwa_kasasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_putusan_terdakwa_pk</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_rehabilitasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_rekonvensi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_rekonvensi_detil</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_sumber_hukum_verzet</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>perkara_verzet</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pesan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pesan_tujuan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pihak</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pihak_foto</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pihak_jaksa</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pihak_pembimbing_masyarakat</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pihak_pengacara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pihak_penyidik</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>referensi_amar_putusan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>referensi_kolom_data_template</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ruangan_sidang</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>saldo_awal</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_audit_config</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_backup</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_config</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_day_name</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_form_rule</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_forms</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_langguage</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_menu_type</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_month_name</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_recordlock_config</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_time_zone</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_user_group</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_user_online</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_users</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>template_dokumen_agenda</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>template_dokumen_jenis_agenda</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>template_history</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>template_perkara_bas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>template_perkara_bas_detil_tanya_jawab</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>template_perkara_bas_penutup</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>template_amar_putusan</name>
+					<columns all="yes"/>
+			</table>
+			<table>
+					<name>template_keterangan_saksi_m</name>
+					<columns all="yes"/>
+			</table>
+			<table>
+					<name>template_keterangan_saksi_d</name>
+					<columns all="yes"/>
+			</table>
+			<table>
+					<name>user_hakim</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>user_jurusita</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>user_panitera</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>usulan_kurator</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_groups</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_menus</name>
+					<columns all="yes" />
+			</table>
+			<table>
+				<name>hakim_pt</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>panitera_pt</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_hakim_banding</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_panitera_banding</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_putusan_terdakwa_banding</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_keberatan_kppu</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_kewenangan_kppu</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_edoc_kppu</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_edoc_calendar</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_data_dukung_mediasi</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_biaya_jurusita</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_perbaikan_gugatan</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_wakaf</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_mempelai_dk</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_anak_pihak</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_alasan_nikah</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_efiling_perlawanan</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_efiling_perlawanan</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_pemilu</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>epayment</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>ecourt_prodeo</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>berpadu_pelimpahan</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>berpadu_pelimpahan_register</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_proses</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>perkara_klasifikasi_pkr</name>
+				<columns all="yes" />
+			</table>
+			<table>
+				<name>updates</name>
+				<columns all="yes" />
+			</table>
+			<table>
+			<name>sys_audittrail</name>
+					<columns all="yes" />
+			</table>
+			</tables>
+			<sync_action type="directsync" />
+			<abortonerror abort="no" />
+			<sendreport send="no" />
+		</syncjob>
+	</job>
+	

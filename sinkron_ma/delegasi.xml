@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<job version="9.0">
+	<syncjob>
+		<fkcheck check="yes" />
+		<dontdelfromtarget dontdel="yes" />
+		<source>
+			<tunnelinfo type="http">
+				<url>http://cts-upload.mahkamahagung.go.id/SQLyogTunnel.php</url>
+				<timeout>30000</timeout>
+				<contenttype>text/xml</contenttype>
+				<encodedata>0</encodedata>
+			</tunnelinfo>
+			<host>localhost</host>
+			<user>user_663030_down</user>
+			<pwd>7i61tLdU</pwd>
+			<port>3306</port>
+			<compressed>1</compressed>
+			<ssl>0</ssl>
+			<sslauth>0</sslauth>
+			<clientkey></clientkey>
+			<clientcert></clientcert>
+			<cacert></cacert>
+			<cipher></cipher>
+			<charset></charset>
+			<database>cts2_pn_663030</database>
+		</source>
+		<target>
+			<tunnelinfo type="http">
+				<url>http://IP SERVER LOKAL/FOLDER SIPP/SQLyogTunnel.php</url>
+				<timeout>30000</timeout>
+				<contenttype>text/xml</contenttype>
+				<encodedata>0</encodedata>
+			</tunnelinfo>
+			<host>localhost</host>
+			<user>root</user>
+			<pwd>123gunungsugih</pwd>
+			<port>3306</port>
+			<compressed>1</compressed>
+			<ssl>0</ssl>
+			<sslauth>0</sslauth>
+			<clientkey></clientkey>
+			<clientcert></clientcert>
+			<cacert></cacert>
+			<cipher></cipher>
+			<charset></charset>
+			<database>sipp</database>
+		</target>
+		<tables all="no">
+			<table><name>ecourt_ref_sink</name>
+					<columns all="yes" />
+			</table>
+			<table><name>api_ref_sync</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pengadilan_negeri</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>pengadilan_tinggi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>alur_perkara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>faktor_perceraian</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>hari_libur</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_alur_perkara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_biaya</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_delegasi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_identitas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_kendaraan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_penahanan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_perkara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_pihak</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>jenis_tahanan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>kabupaten</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>kategori_biaya</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>kejaksaan_negeri</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>kejaksaan_tinggi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>lembaga_pemasyarakatan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>negara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>propinsi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>proses</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_akad_syariah</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_bidang_ekonomi_syariah</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>referensi_pengakhiran_jenis_alasan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>referensi_pengakhiran_jenis_bukti</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>referensi_tindakan_hakim_pengawas</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>referensi_jenis_kesepakatan_diversi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>proses_alur_perkara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sppt_ref_penyidik</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sppt_ref_satker</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sumber_hukum</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>status_putusan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>status_putusan_banding</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>status_perkawinan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>status_penahanan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>status_pihak</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_group_rule</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>sys_menu_rule</name>
+					<columns all="yes" />
+			</table>					
+			<table>
+					<name>sys_rules</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>tahapan_proses</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>tingkat_pendidikan</name>
+					<columns all="yes" />
+			</table>			
+			<table>
+					<name>template_dokumen</name>
+					<columns all="yes" />
+			</table>										
+			<table>
+					<name>dirput_dokumen_ref</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>dirput_perkara</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>dirput_ref</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>dirput_sipp_ref</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_batal_kawin</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_penguasaan_anak</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_pengesahan_anak</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_pelaksanaan_eksekusi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_tingkat_pendidikan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_pekerjaan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_objek_wakaf</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_jenis_alasan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_izin_poligami</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_isbat_nikah</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_kabupaten</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_kecamatan</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_kua</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_provinsi</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_asal_usul_anak</name>
+					<columns all="yes" />
+			</table>
+			<table>
+					<name>ref_dispensasi_kawin</name>
+					<columns all="yes" />
+			</table>
+		</tables>
+		<sync_action type="directsync" />
+		<abortonerror abort="no" />
+		<sendreport send="no" />
+	</syncjob>
+	</job>

@@ -1,0 +1,5 @@
+petunjuk
+1. upload file SQLyogTunnel1242.php ke server sipp 
+2. copy file sinkronisasi_1.xml, sinkronisasi_2.xml, sinkronisasi_3.xml yang lama ke folder Sinkron 1242
+2. ganti pada file sinkronisasi_2.xml di bagian ip lokal masing-masing menjadi http://IP_LOKAL/SQLyogTunnel1242.php
+2. tes jalankan

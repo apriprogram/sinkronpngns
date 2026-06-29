@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<job version="9.0">
+	<notifyjob>
+	<abortonerror value="yes" />
+	<result returned="no" />
+	<mailonerror value="no" />
+	<source>
+		<tunnelinfo type="http">
+			<url>http://cts-upload.mahkamahagung.go.id/SQLyogTunnel.php</url>
+			<timeout>30000</timeout>
+			<contenttype>text/xml</contenttype>
+			<encodedata>0</encodedata>
+		</tunnelinfo>
+		<host>localhost</host>
+		<user>user_663030</user>
+		<pwd>7i61tLdU</pwd>
+		<port>3306</port>
+		
+		<compressed>1</compressed>
+		<ssl>0</ssl>
+		<sslauth>0</sslauth>
+		<clientkey></clientkey>
+		<clientcert></clientcert>
+		<cacert></cacert>
+		<cipher></cipher>
+		<charset></charset>
+		<database>cts2_pn_663030</database>
+	</source>
+	<query>UPDATE cts2_pn_663030.sinkronisasi  SET `mulai_pn` = CURRENT_TIMESTAMP(),  `status_pn` = 1 WHERE `id` = 1;</query>
+	</notifyjob>
+</job>
