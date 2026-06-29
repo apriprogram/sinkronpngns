@@ -354,12 +354,63 @@
     }
 
     .status-card {
+      position: relative;
+      z-index: 0;
+      isolation: isolate;
       min-width: 210px;
       padding: 17px 18px;
       border-radius: var(--radius-sm);
       color: var(--white);
       background: rgba(16, 24, 23, 0.56);
       box-shadow: inset 0 0 0 1px rgba(236, 246, 241, 0.16);
+      overflow: hidden;
+    }
+
+    .status-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      border: 1px solid rgba(236, 246, 241, 0.16);
+      pointer-events: none;
+    }
+
+    .status-card::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      z-index: -1;
+      border-radius: inherit;
+      padding: 2px;
+      opacity: 0;
+      pointer-events: none;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 250deg,
+        rgba(100, 244, 172, 0.12) 286deg,
+        rgba(100, 244, 172, 0.9) 320deg,
+        rgba(255, 255, 255, 0.9) 334deg,
+        transparent 360deg
+      );
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .status-card.is-processing {
+      box-shadow:
+        inset 0 0 0 1px rgba(100, 244, 172, 0.22),
+        0 0 28px rgba(100, 244, 172, 0.18);
+    }
+
+    .status-card.is-processing::before {
+      border-color: rgba(100, 244, 172, 0.42);
+    }
+
+    .status-card.is-processing::after {
+      opacity: 1;
+      animation: statusGlowOrbit 1.8s linear infinite;
     }
 
     .status-card span {
@@ -383,12 +434,9 @@
     .status-icon {
       width: 26px;
       height: 26px;
-      border-radius: 50%;
       display: inline-grid;
       place-items: center;
-      color: #08100d;
-      background: #f0f4ef;
-      box-shadow: 0 0 18px rgba(240, 244, 239, 0.22);
+      color: #f0f4ef;
       flex: 0 0 auto;
     }
 
@@ -403,6 +451,10 @@
     }
 
     @keyframes statusSpin {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes statusGlowOrbit {
       to { transform: rotate(360deg); }
     }
     .sync-layout {
@@ -495,49 +547,7 @@
       background-repeat: no-repeat;
     }
 
-    .sync-card > * {
-      position: relative;
-      z-index: 1;
-    }
 
-    .sync-card.is-processing {
-      box-shadow: 0 0 30px rgba(100, 244, 172, 0.16);
-    }
-
-    .sync-card.is-processing::before {
-      border-color: rgba(100, 244, 172, 0.7);
-      box-shadow:
-        inset 0 0 0 1px rgba(100, 244, 172, 0.24),
-        0 0 24px rgba(100, 244, 172, 0.26);
-    }
-
-    .sync-card.is-processing::after {
-      inset: -2px;
-      opacity: 1;
-      border-radius: inherit;
-      background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 245deg,
-        rgba(100, 244, 172, 0.08) 285deg,
-        rgba(100, 244, 172, 0.9) 318deg,
-        rgba(255, 255, 255, 0.9) 332deg,
-        transparent 360deg
-      );
-      background-size: auto;
-      clip-path: inherit;
-      padding: 2px;
-      filter: blur(0.2px);
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      animation: cardGlowOrbit 1.8s linear infinite;
-      z-index: 0;
-    }
-
-    @keyframes cardGlowOrbit {
-      to { transform: rotate(360deg); }
-    }
     .sync-card:hover {
       transform: translateY(-3px);
       background:
@@ -1245,7 +1255,7 @@
       const label = card.querySelector(".sync-state span");
       label.textContent = text;
       dot.style.background = color;
-      card.classList.toggle("is-processing", text === "Sedang sinkronisasi");
+
     }
 
     setSystemStatus("Siap sinkronisasi", "ready");
