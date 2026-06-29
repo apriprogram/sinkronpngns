@@ -347,7 +347,8 @@
       position: relative;
       z-index: 0;
       isolation: isolate;
-      min-width: 210px;
+      width: 210px;
+      min-height: 88px;
       padding: 17px 18px;
       border-radius: var(--radius-sm);
       color: var(--white);
@@ -378,10 +379,10 @@
       pointer-events: none;
       background: linear-gradient(90deg, transparent, rgba(100, 244, 172, 0.35), #ffffff, rgba(100, 244, 172, 0.92), transparent);
       box-shadow: 0 0 14px rgba(100, 244, 172, 0.72);
-      offset-path: path("M 13 1 H 197 Q 209 1 209 13 V 69 Q 209 81 197 81 H 13 Q 1 81 1 69 V 13 Q 1 1 13 1");
+      offset-path: path("M 14 1 H 196 Q 209 1 209 14 V 74 Q 209 87 196 87 H 14 Q 1 87 1 74 V 14 Q 1 1 14 1");
       offset-distance: 0%;
       offset-rotate: auto;
-      transform: translate(-24px, -1px);
+      offset-anchor: 50% 50%;
       will-change: offset-distance;
     }
 
