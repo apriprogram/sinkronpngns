@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -355,7 +355,7 @@
 
     .status-card {
       min-width: 210px;
-      padding: 16px 18px;
+      padding: 17px 18px;
       border-radius: var(--radius-sm);
       color: var(--white);
       background: rgba(16, 24, 23, 0.56);
@@ -365,16 +365,45 @@
     .status-card span {
       display: block;
       color: rgba(255, 255, 255, 0.72);
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 500;
       text-transform: uppercase;
     }
 
     .status-card strong {
-      display: block;
-      margin-top: 7px;
-      font-size: 18px;
-      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-top: 8px;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .status-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      color: #08100d;
+      background: #f0f4ef;
+      box-shadow: 0 0 18px rgba(240, 244, 239, 0.22);
+      flex: 0 0 auto;
+    }
+
+    .status-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke: currentColor;
+    }
+
+    .status-card.is-processing .status-icon svg {
+      animation: statusSpin 950ms linear infinite;
+    }
+
+    @keyframes statusSpin {
+      to { transform: rotate(360deg); }
     }
     .sync-layout {
       width: min(100%, 1380px);
@@ -420,6 +449,8 @@
 
     .sync-card {
       position: relative;
+      z-index: 0;
+      isolation: isolate;
       min-height: 230px;
       padding: 24px;
       border: 0;
@@ -464,6 +495,49 @@
       background-repeat: no-repeat;
     }
 
+    .sync-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .sync-card.is-processing {
+      box-shadow: 0 0 30px rgba(100, 244, 172, 0.16);
+    }
+
+    .sync-card.is-processing::before {
+      border-color: rgba(100, 244, 172, 0.7);
+      box-shadow:
+        inset 0 0 0 1px rgba(100, 244, 172, 0.24),
+        0 0 24px rgba(100, 244, 172, 0.26);
+    }
+
+    .sync-card.is-processing::after {
+      inset: -2px;
+      opacity: 1;
+      border-radius: inherit;
+      background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 245deg,
+        rgba(100, 244, 172, 0.08) 285deg,
+        rgba(100, 244, 172, 0.9) 318deg,
+        rgba(255, 255, 255, 0.9) 332deg,
+        transparent 360deg
+      );
+      background-size: auto;
+      clip-path: inherit;
+      padding: 2px;
+      filter: blur(0.2px);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: cardGlowOrbit 1.8s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes cardGlowOrbit {
+      to { transform: rotate(360deg); }
+    }
     .sync-card:hover {
       transform: translateY(-3px);
       background:
@@ -1047,9 +1121,9 @@
             </div>
           </div>
 
-          <aside class="status-card" aria-live="polite">
+          <aside class="status-card" id="statusCard" aria-live="polite">
             <span>Status Sistem</span>
-            <strong id="systemStatus">Siap sinkronisasi</strong>
+            <strong id="systemStatus"><span class="status-icon" id="systemStatusIcon" aria-hidden="true"></span><span id="systemStatusText">Siap sinkronisasi</span></strong>
           </aside>
         </div>
 
@@ -1144,18 +1218,37 @@
     const tabButtons = document.querySelectorAll(".tab-item");
     const tabPanels = document.querySelectorAll(".tab-panel");
     const cards = document.querySelectorAll(".sync-card");
+    const statusCard = document.getElementById("statusCard");
     const systemStatus = document.getElementById("systemStatus");
+    const systemStatusIcon = document.getElementById("systemStatusIcon");
+    const systemStatusText = document.getElementById("systemStatusText");
     const logTitle = document.getElementById("logTitle");
     const logStatus = document.getElementById("logStatus");
     const terminalLog = document.getElementById("terminalLog");
     let activeTimer = null;
+
+    const statusIcons = {
+      ready: '<svg viewBox="0 0 24 24" fill="none"><path d="M7 7h11M14 3l4 4-4 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M17 17H6M10 13l-4 4 4 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+      processing: '<svg viewBox="0 0 24 24" fill="none"><path d="M21 12a9 9 0 11-2.64-6.36" stroke-width="2" stroke-linecap="round"></path><path d="M21 4v6h-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+      done: '<svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+      error: '<svg viewBox="0 0 24 24" fill="none"><path d="M12 8v5" stroke-width="2" stroke-linecap="round"></path><path d="M12 17h.01" stroke-width="3" stroke-linecap="round"></path><path d="M10.3 4.3L2.8 17.2A2 2 0 004.5 20h15a2 2 0 001.7-2.8L13.7 4.3a2 2 0 00-3.4 0z" stroke-width="2" stroke-linejoin="round"></path></svg>'
+    };
+
+    function setSystemStatus(text, state) {
+      systemStatusText.textContent = text;
+      systemStatusIcon.innerHTML = statusIcons[state] || statusIcons.ready;
+      statusCard.classList.toggle("is-processing", state === "processing");
+    }
 
     function setCardState(card, text, color) {
       const dot = card.querySelector(".sync-state i");
       const label = card.querySelector(".sync-state span");
       label.textContent = text;
       dot.style.background = color;
+      card.classList.toggle("is-processing", text === "Sedang sinkronisasi");
     }
+
+    setSystemStatus("Siap sinkronisasi", "ready");
 
     const tabIndicator = document.querySelector(".tab-indicator");
     const hero = document.querySelector(".hero");
@@ -1271,7 +1364,7 @@
         cards.forEach((item) => setCardState(item, "Menunggu perintah", "#dbe1e8"));
         setCardState(card, "Sedang sinkronisasi", "#1354ed");
 
-        systemStatus.textContent = "Memproses";
+        setSystemStatus("Memproses", "processing");
         logTitle.textContent = "Sinkronisasi " + targetLabel;
         logStatus.textContent = "Menjalankan batch";
         terminalLog.innerHTML = "";
@@ -1293,7 +1386,7 @@
 
         function finishSync(message) {
           setCardState(card, "Selesai", "#03369d");
-          systemStatus.textContent = "Selesai";
+          setSystemStatus("Selesai", "done");
           logTitle.textContent = "Sinkronisasi berjalan";
           logStatus.textContent = "CMD terbuka";
           if (message) renderLog([message], null);
@@ -1301,7 +1394,7 @@
 
         function failSync(error) {
           setCardState(card, "Gagal", "#d92d20");
-          systemStatus.textContent = "Gagal";
+          setSystemStatus("Gagal", "error");
           logStatus.textContent = "Error";
           renderLog([], "ERROR: " + error.message);
         }
@@ -1334,21 +1427,21 @@
               if (!logResult.running) {
                 clearInterval(activeTimer);
                 setCardState(card, "Selesai", "#03369d");
-                systemStatus.textContent = "Selesai";
+                setSystemStatus("Selesai", "done");
                 logTitle.textContent = "Sinkronisasi berhasil";
                 logStatus.textContent = "Selesai";
               }
             } catch (error) {
               clearInterval(activeTimer);
               setCardState(card, "Gagal", "#d92d20");
-              systemStatus.textContent = "Gagal";
+              setSystemStatus("Gagal", "error");
               logStatus.textContent = "Error";
               renderLog([], "ERROR: " + error.message);
             }
           }, 1000);
         } catch (error) {
           setCardState(card, "Gagal", "#d92d20");
-          systemStatus.textContent = "Gagal";
+          setSystemStatus("Gagal", "error");
           logStatus.textContent = "Server lokal belum aktif";
           renderLog([
             "Browser biasa tidak boleh menjalankan file .bat langsung.",
@@ -1368,4 +1461,3 @@
   </script>
 </body>
 </html>
-
