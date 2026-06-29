@@ -378,24 +378,16 @@
     .status-card::after {
       content: "";
       position: absolute;
-      inset: -2px;
-      z-index: -1;
-      border-radius: inherit;
-      padding: 2px;
+      left: 12px;
+      top: 0;
+      z-index: 1;
+      width: 54px;
+      height: 2px;
+      border-radius: 999px;
       opacity: 0;
       pointer-events: none;
-      background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 250deg,
-        rgba(100, 244, 172, 0.12) 286deg,
-        rgba(100, 244, 172, 0.9) 320deg,
-        rgba(255, 255, 255, 0.9) 334deg,
-        transparent 360deg
-      );
-      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
+      background: linear-gradient(90deg, transparent, rgba(100, 244, 172, 0.45), #ffffff, rgba(100, 244, 172, 0.9), transparent);
+      box-shadow: 0 0 12px rgba(100, 244, 172, 0.72);
     }
 
     .status-card.is-processing {
@@ -410,7 +402,7 @@
 
     .status-card.is-processing::after {
       opacity: 1;
-      animation: statusGlowOrbit 1.8s linear infinite;
+      animation: statusBorderRun 2.6s linear infinite;
     }
 
     .status-card span {
@@ -454,8 +446,58 @@
       to { transform: rotate(360deg); }
     }
 
-    @keyframes statusGlowOrbit {
-      to { transform: rotate(360deg); }
+    .status-card > span,
+    .status-card > strong {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes statusBorderRun {
+      0% {
+        left: 12px;
+        top: 0;
+        transform: translate(0, 0) rotate(0deg);
+      }
+      24% {
+        left: calc(100% - 66px);
+        top: 0;
+        transform: translate(0, 0) rotate(0deg);
+      }
+      25% {
+        left: calc(100% - 28px);
+        top: 12px;
+        transform: translate(0, 0) rotate(90deg);
+      }
+      49% {
+        left: calc(100% - 28px);
+        top: calc(100% - 14px);
+        transform: translate(0, -54px) rotate(90deg);
+      }
+      50% {
+        left: calc(100% - 66px);
+        top: calc(100% - 2px);
+        transform: translate(0, 0) rotate(180deg);
+      }
+      74% {
+        left: 12px;
+        top: calc(100% - 2px);
+        transform: translate(0, 0) rotate(180deg);
+      }
+      75% {
+        left: -26px;
+        top: calc(100% - 14px);
+        transform: translate(0, -54px) rotate(270deg);
+      }
+      99% {
+        left: -26px;
+        top: 12px;
+        transform: translate(0, 0) rotate(270deg);
+      }
+      100% {
+        left: 12px;
+        top: 0;
+        transform: translate(0, 0) rotate(0deg);
+      }
     }
     .sync-layout {
       width: min(100%, 1380px);
